@@ -6,7 +6,7 @@ from xgboost import XGBClassifier
 
 def main():
     st.title("Propensity Modeling App")
-    st.image("buying-cycle.png", use_column_width=True) 
+    st.image("Buying-Cycle .png", use_column_width=True) 
     # Load the Random Forest model
     with open('xgboost_model.pkl', 'rb') as file:
         xgboost_model = pickle.load(file)
