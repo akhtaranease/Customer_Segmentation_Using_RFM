@@ -1,7 +1,8 @@
+xgboost
+lightgbm
 numpy
 pandas
 streamlit
 scikit_learn
 matplotlib
 seaborn
-xgboost
