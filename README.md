@@ -13,4 +13,4 @@ Customer segmentation is the process of categorizing a customer base into distin
 
 ## Demo
 
-Streamlit Link:
+Streamlit Link:https://customersegmentationusingrfm-pyfhxyvkrcuiggshixtzec.streamlit.app/
