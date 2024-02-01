@@ -57,7 +57,7 @@ def main():
             st.success("Customer is going to purchase another item.")
         else:
             st.error("Customer is not going to purchase another item.")
-        st.info(f"Prediction Probability: {prediction_proba:.4f}")
+        
 
 # Running the Streamlit app
 if __name__ == "__main__":
