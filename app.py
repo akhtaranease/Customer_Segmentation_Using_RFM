@@ -54,9 +54,9 @@ def main():
 
         # Display random prediction result
         if prediction == 1:
-            st.success("Customer is going to buy an item in the next hour.")
+            st.success("Customer is going to purchase another item.")
         else:
-            st.error("Customer is not going to purchase an item in the next hour.")
+            st.error("Customer is not going to purchase another item.")
         st.info(f"Prediction Probability: {prediction_proba:.4f}")
 
 # Running the Streamlit app
