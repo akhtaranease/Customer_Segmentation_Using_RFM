@@ -5,7 +5,7 @@ import pandas as pd
 from xgboost import XGBClassifier
 
 def main():
-    st.title("Propensity Modeling App")
+    st.title("Customer Segmentation App")
     st.image("Buying-Cycle .png", use_column_width=True) 
     # Load the Random Forest model
     with open('xgboost_model.pkl', 'rb') as file:
