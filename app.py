@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 # Load trained model
-with open("xgboost_model.pkl", "rb") as f:
+with open("xgboost_modell.pkl", "rb") as f:
     model = pickle.load(f)
 
 # Streamlit App UI
