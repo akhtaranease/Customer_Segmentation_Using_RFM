@@ -6,16 +6,20 @@ import pandas as pd
 with open("xgboost_model.pkl", "rb") as f:
     model = pickle.load(f)
 
-# 🧠 App Title + Description
+# App Title and Description
 st.title("📊 Customer Purchase Prediction App")
+
+# ✅ Correct image usage (standalone line)
+st.image("customer_segmentation_banner.png", use_column_width=True)
+
+# Description below the image
 st.markdown("""
 This tool predicts whether a customer is **likely to make another purchase**  
 based on RFM (Recency, Frequency, Monetary) and behavioral features.
 
-
 Use the sliders to simulate different customer profiles.
 """)
-st.image("customer_segmentation_banner.png", use_column_width=True)
+
 
 # 🧾 Input Features – Sidebar
 st.sidebar.header("🛠 Input Features")
