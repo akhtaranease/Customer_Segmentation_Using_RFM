@@ -11,9 +11,9 @@ def main():
         xgb_model = pickle.load(file)
 
     # Debug: print what the model expects
-st.markdown("### 🛠 Debug Info")
-st.write("Model expects these columns:")
-st.write(xgb_model.get_booster().feature_names)
+    st.markdown("### 🛠 Debug Info")
+    st.write("Model expects these columns:")
+    st.write(xgb_model.get_booster().feature_names)
 
     # Sidebar sliders
     st.sidebar.header("🔧 Input Customer Behavior (Scaled 0–1)")
