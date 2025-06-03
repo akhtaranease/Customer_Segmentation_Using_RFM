@@ -8,6 +8,12 @@ with open("xgboost_model.pkl", "rb") as f:
 
 # Streamlit UI
 st.title("📊 Customer Purchase Prediction")
+st.markdown("""
+This tool predicts whether a customer is **likely to make another purchase** 
+based on RFM (Recency, Frequency, Monetary) and behavioral features.
+
+Use the sliders to simulate different customer profiles.
+""")
 
 st.sidebar.header("Input Features")
 
