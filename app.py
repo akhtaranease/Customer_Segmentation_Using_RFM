@@ -12,6 +12,8 @@ st.markdown("""
 This tool predicts whether a customer is **likely to make another purchase**  
 based on RFM (Recency, Frequency, Monetary) and behavioral features.
 
+st.image("customer_segmentation_banner.png", use_column_width=True)
+
 Use the sliders to simulate different customer profiles.
 """)
 
