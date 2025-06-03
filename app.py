@@ -57,9 +57,9 @@ if st.button("Predict"):
     prob = model.predict_proba(input_df)[0][pred] * 100
 
     # ✅ Interpret multi-class predictions
-    if pred == 0
+    if pred == 0:
         label = "✅ Likely to Purchase Again"
     else:
-        "❌ Not Likely to Purchase Again"
+        label = "❌ Not Likely to Purchase Again"
 
     st.success(f"Prediction: **{label}**\n\nConfidence: **{prob:.1f}%**")
