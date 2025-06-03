@@ -8,7 +8,11 @@ with open("xgboost_model.pkl", "rb") as f:
 
 # App Title and Description
 st.title("📊 Customer Purchase Prediction App")
+
+# Banner image
 st.image("customer_segmentation_banner.png", use_container_width=True)
+
+# Description below the image
 st.markdown("""
 This tool predicts whether a customer is **likely to make another purchase**  
 based on RFM (Recency, Frequency, Monetary) and behavioral features.
@@ -48,7 +52,14 @@ input_df = pd.DataFrame([{
 # 🚀 Make prediction
 if st.button("Predict"):
     pred = model.predict(input_df)[0]
-    st.write("Model output:", pred)
+    st.write("Model output:", pred)  # Debug print
+
     prob = model.predict_proba(input_df)[0][pred] * 100
-    label = "✅ Likely to Purchase Again" if pred == 1 else "❌ Not Likely to Purchase Again"
+
+    # ✅ Interpret multi-class predictions
+    if pred >= 2:
+        label = "✅ Likely to Purchase Again"
+    else:
+        label = "❌ Not Likely to Purchase Again"
+
     st.success(f"Prediction: **{label}**\n\nConfidence: **{prob:.1f}%**")
