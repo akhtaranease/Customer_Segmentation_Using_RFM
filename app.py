@@ -1,64 +1,51 @@
 import streamlit as st
 import pickle
-import numpy as np
 import pandas as pd
-from xgboost import XGBClassifier
 
-def main():
-    st.title("Customer Segmentation App")
-    st.image("Buying-Cycle .png", use_column_width=True) 
-    # Load the Random Forest model
-    with open('xgboost_model.pkl', 'rb') as file:
-        xgboost_model = pickle.load(file)
+# Load trained XGBoost model
+with open("xgboost_model.pkl", "rb") as file:
+    model = pickle.load(file)
 
-# Sidebar
-    st.sidebar.header("Input Features")
+# Set up page
+st.title("📊 Customer Loyalty Prediction")
+st.write("Enter customer RFM data to predict loyalty segment.")
 
-    no_of_days_active = st.sidebar.slider("No. of Days Active", 0.0, 1.0, 0.5)
-    R = st.sidebar.slider("R", 0.0, 1.0, 0.5)
-    F = st.sidebar.slider("F", 0.0, 1.0, 0.5)
-    M = st.sidebar.slider("M", 0.0, 1.0, 0.5)
-    avg_time_between_purchase = st.sidebar.slider("Avg. Time Between Purchase", 0.0, 1.0, 0.5)
+# Sidebar for inputs
+st.sidebar.header("Input RFM Features")
 
+no_of_days_active = st.sidebar.slider("No. of Days Active (0–1)", 0.0, 1.0, 0.5)
+R = st.sidebar.slider("Recency (0–1)", 0.0, 1.0, 0.5)
+F = st.sidebar.slider("Frequency (0–1)", 0.0, 1.0, 0.5)
+M = st.sidebar.slider("Monetary Value (0–1)", 0.0, 1.0, 0.5)
+avg_time_between_purchase = st.sidebar.slider("Avg Time Between Purchase (0–1)", 0.0, 1.0, 0.5)
 
-# Create a radio button for Loyalty Level
-    loyalty_level_options = ["Bronze", "Silver", "Gold", "Platinum"]
-    selected_loyalty_level = st.sidebar.radio("Select Loyalty Level", loyalty_level_options)
+# Build input DataFrame with correct feature names
+input_data = pd.DataFrame([{
+    "no_of_days_active": no_of_days_active,
+    "R": R,
+    "F": F,
+    "M": M,
+    "avg_time_between_purchase": avg_time_between_purchase
+}])
 
-    # Convert selected loyalty level to binary values
-    loyalty_levels = {
-        "Bronze": 0,
-        "Silver": 0,
-        "Gold": 0,
-        "Platinum": 0
+# Prediction logic
+if st.button("Predict"):
+    prediction = model.predict(input_data)[0]
+
+    loyalty_labels = {
+        0: "Bronze",
+        1: "Silver",
+        2: "Gold",
+        3: "Platinum"
     }
-    loyalty_levels[selected_loyalty_level] = 1
 
-# Create a DataFrame with input data
-    input_data = pd.DataFrame({
-        "no_of_days_active": [no_of_days_active],
-        "R": [R],
-        "F": [F],
-        "M": [M],
-        "avg_time_between_purchase": [avg_time_between_purchase],
-        "Loyalty_Level_Bronze": [loyalty_levels["Bronze"]],
-        "Loyalty_Level_Silver": [loyalty_levels["Silver"]],
-        "Loyalty_Level_Gold": [loyalty_levels["Gold"]],
-        "Loyalty_Level_Platinum": [loyalty_levels["Platinum"]],
-    })
+    recs = {
+        "Bronze": "🔁 Send win-back offers or discounts to re-engage.",
+        "Silver": "📧 Keep engaged with regular updates and perks.",
+        "Gold": "🏆 Reward loyalty with tailored promotions.",
+        "Platinum": "💎 VIP treatment — exclusive deals and early access."
+    }
 
-    if st.button("Predict"):
- 
-        prediction = np.random.choice([0, 1])
-        prediction_proba = np.random.uniform(0.001, 0.999)
-
-        # Display random prediction result
-        if prediction == 1:
-            st.success("Customer is going to purchase another item.")
-        else:
-            st.error("Customer is not going to purchase another item.")
-        
-
-# Running the Streamlit app
-if __name__ == "__main__":
-    main()
+    label = loyalty_labels.get(prediction, "Unknown")
+    st.success(f"🎯 Predicted Loyalty Level: **{label}**")
+    st.info(recs.get(label, "No recommendation available."))
