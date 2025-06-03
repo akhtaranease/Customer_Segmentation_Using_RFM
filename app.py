@@ -59,7 +59,7 @@ input_df = pd.DataFrame([{
 # 🚀 Make prediction
 if st.button("Predict"):
     pred = model.predict(input_df)[0]
-        st.write("Model output:", pred)
+    st.write("Model output:", pred)
 
     prob = model.predict_proba(input_df)[0][pred] * 100  # Confidence %
     label = "✅ Likely to Purchase Again" if pred == 1 else "❌ Not Likely to Purchase Again"
