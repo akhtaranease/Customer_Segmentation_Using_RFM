@@ -10,7 +10,8 @@ with open("xgboost_model.pkl", "rb") as f:
 st.title("📊 Customer Purchase Prediction App")
 
 # ✅ Correct image usage (standalone line)
-st.image("customer_segmentation_banner.png", use_column_width=True)
+st.image("customer_segmentation_banner.png", use_container_width=True)
+
 
 # Description below the image
 st.markdown("""
