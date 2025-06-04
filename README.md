@@ -13,7 +13,7 @@ We applied **Recency, Frequency, and Monetary (RFM)** analysis — where:
 - **Recency** = how recently a customer made a purchase  
 - **Frequency** = how often they purchase  
 - **Monetary** = how much they spend  
-— helping us categorize customer loyalty levels and explore behavioral trends.
+- helping us categorize customer loyalty levels and explore behavioral trends.
 
 ### ✅ Key Tasks:
 - Cleaned and formatted customer transaction data  
