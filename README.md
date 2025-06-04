@@ -1,6 +1,6 @@
 # 🧠 Customer Segmentation & Purchase Prediction App
 
-![App Screenshot](Stream_Lit_App.png)
+![Customer Segmentation Sreamlit App](Stream_Lit_App.png)
 
 This project combines customer segmentation analysis with a predictive model to identify customers most likely to make another purchase. It demonstrates end-to-end skills in data preprocessing, feature engineering, model building, and deployment.
 
@@ -99,7 +99,3 @@ A fully deployed app allowing users to simulate different customer profiles and 
 
 
 
-
-## Demo
-
-Streamlit Link:https://customersegmentationusingrfm-pyfhxyvkrcuiggshixtzec.streamlit.app/
