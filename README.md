@@ -1,6 +1,6 @@
 # 🧠 Customer Segmentation & Purchase Prediction App
 
-![App Screenshot] (Customer_Segmentation_App.png)
+![App Screenshot](Customer_Segmentation_App.png)
 
 This project combines customer segmentation analysis with a predictive model to identify customers most likely to make another purchase. It demonstrates end-to-end skills in data preprocessing, feature engineering, model building, and deployment.
 
