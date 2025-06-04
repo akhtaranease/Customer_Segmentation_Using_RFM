@@ -13,7 +13,7 @@ We applied **Recency, Frequency, and Monetary (RFM)** analysis — where:
 - **Recency** = how recently a customer made a purchase  
 - **Frequency** = how often they purchase  
 - **Monetary** = how much they spend  
-- To categorize customer loyalty levels and explore behavioral trends.
+— helping us categorize customer loyalty levels and explore behavioral trends.
 
 ### ✅ Key Tasks:
 - Cleaned and formatted customer transaction data  
@@ -30,7 +30,7 @@ Built a **binary classification model** to predict whether a customer is *likely
 ### ⚙️ ML Workflow:
 - **Features**: `R`, `F`, `M`, `no_of_days_active`, `avg_time_between_purchase` + one-hot encoded loyalty level  
 - **Target**: `Purchase (1)` or `No Purchase (0)`  
-- **Handling class imbalance**: manual label adjustment + SMOTE (considered)  
+- **Handling class imbalance**: adjusted labels to binary manually (original were multi-class); SMOTE was also considered  
 - **Model**: `XGBoost Classifier`  
 - **Tuning**: `RandomizedSearchCV` for best hyperparameters  
 - **Evaluation**: Classification report, Confusion Matrix, ROC AUC
@@ -46,9 +46,11 @@ A fully deployed app that lets users simulate customer profiles using sliders an
 - Loyalty level radio buttons (one-hot encoded in real time)  
 - Live predictions with confidence percentage  
 - Clean layout with branded banner image  
+- End-to-end deployment with full control over backend model and frontend app logic  
 - Hosted on Streamlit Cloud  
 
-👉 [**Launch App**](https://customersegmentationusingrfm-pyfhxyvkrcuiggshixtzec.streamlit.app/)
+👉 **Launch the app:**  
+🔗 [customersegmentationusingrfm-pyfhxyvkrcuiggshixtzec.streamlit.app](https://customersegmentationusingrfm-pyfhxyvkrcuiggshixtzec.streamlit.app)
 
 ---
 
@@ -100,8 +102,3 @@ A fully deployed app that lets users simulate customer profiles using sliders an
 - [Anease Akhtar](https://github.com/akhtaranease)
 
 ---
-
-## 🚀 Demo
-
-Try the live app:  
-**https://customersegmentationusingrfm-pyfhxyvkrcuiggshixtzec.streamlit.app/**
