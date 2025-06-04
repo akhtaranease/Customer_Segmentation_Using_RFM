@@ -13,7 +13,7 @@ We applied **Recency, Frequency, and Monetary (RFM)** analysis — where:
 - **Recency** = how recently a customer made a purchase  
 - **Frequency** = how often they purchase  
 - **Monetary** = how much they spend  
-- Helping us categorize customer loyalty levels and explore behavioral trends.
+- These metrics helped us categorize customer loyalty levels and explore behavioral trends.
 
 ### ✅ Key Tasks:
 - Cleaned and formatted customer transaction data  
@@ -30,27 +30,25 @@ Built a **binary classification model** to predict whether a customer is *likely
 ### ⚙️ ML Workflow:
 - **Features**: `R`, `F`, `M`, `no_of_days_active`, `avg_time_between_purchase` + one-hot encoded loyalty level  
 - **Target**: `Purchase (1)` or `No Purchase (0)`  
-- **Handling class imbalance**: adjusted labels to binary manually (original were multi-class); SMOTE was also considered  
+- **Class Balancing**: manually converted labels to binary; SMOTE considered  
 - **Model**: `XGBoost Classifier`  
-- **Tuning**: `RandomizedSearchCV` for best hyperparameters  
-- **Evaluation**: Classification report, Confusion Matrix, ROC AUC
+- **Tuning**: `RandomizedSearchCV` for hyperparameter optimization  
+- **Evaluation**: classification report, confusion matrix, ROC AUC
 
 ---
 
 ## 🖥️ Part 3: Streamlit App Deployment
 
-A fully deployed app that lets users simulate customer profiles using sliders and view predictions in real time.
+An interactive web app that lets users simulate customer profiles and view predictions in real time.
 
 ### 🎨 App Features:
-- Sliders for all behavior & RFM features  
-- Loyalty level radio buttons (one-hot encoded in real time)  
-- Live predictions with confidence percentage  
-- Clean layout with branded banner image  
-- End-to-end deployment with full control over backend model and frontend app logic  
-- Hosted on Streamlit Cloud  
+- Sliders for RFM and behavior-based inputs  
+- Radio buttons for loyalty tier (one-hot encoded automatically)  
+- Live prediction with confidence percentage  
+- Clean layout and professional banner image  
+- Deployed via Streamlit Cloud
 
-👉 **Launch the app:**  
-🔗 [customersegmentationusingrfm-pyfhxyvkrcuiggshixtzec.streamlit.app](https://customersegmentationusingrfm-pyfhxyvkrcuiggshixtzec.streamlit.app)
+👉 **[Launch App](https://customersegmentationusingrfm-pyfhxyvkrcuiggshixtzec.streamlit.app/)**
 
 ---
 
@@ -64,7 +62,7 @@ A fully deployed app that lets users simulate customer profiles using sliders an
 - ✅ Model Serialization (`.pkl`)  
 - ✅ Streamlit App Development  
 - ✅ GitHub Version Control  
-- ✅ Cloud Deployment (Streamlit)
+- ✅ Streamlit Cloud Deployment
 
 ---
 
@@ -72,28 +70,28 @@ A fully deployed app that lets users simulate customer profiles using sliders an
 
 | File                          | Description                                   |
 |-------------------------------|-----------------------------------------------|
-| `Customer_Segmentation_RFM.ipynb` | Full EDA, feature engineering & model training |
-| `app.py`                      | Streamlit app for prediction                  |
-| `xgboost_model.pkl`           | Trained model (serialized)                    |
-| `customer_segmentation_banner.png` | App image                                 |
-| `requirements.txt`            | App dependencies                              |
+| `Customer_Segmentation_RFM.ipynb` | EDA, feature engineering & model training |
+| `app.py`                      | Streamlit app frontend/backend code           |
+| `xgboost_model.pkl`           | Saved XGBoost model                           |
+| `customer_segmentation_banner.png` | App visual header image                |
+| `requirements.txt`            | Package dependencies for deployment           |
 
 ---
 
 ## 💼 Business Use Cases
 
 - 🎯 Identify high-value or at-risk customers  
-- 🔁 Simulate “what-if” behavior for marketing campaigns  
-- 📈 Prioritize retention efforts based on predictions  
-- 💡 Turn customer data into actionable insights
+- 🔁 Test marketing scenarios with synthetic profiles  
+- 📈 Support customer retention strategy  
+- 💡 Turn behavioral data into actionable insights
 
 ---
 
 ## 🔮 Next Steps
 
-- Integrate SHAP for explainability  
-- Add bulk prediction (CSV upload)  
-- Automate loyalty tier classification
+- Add SHAP for model interpretability  
+- Allow CSV file uploads for batch predictions  
+- Automate loyalty level assignment
 
 ---
 
@@ -102,3 +100,8 @@ A fully deployed app that lets users simulate customer profiles using sliders an
 - [Anease Akhtar](https://github.com/akhtaranease)
 
 ---
+
+## 🚀 Demo
+
+Try the live app here:  
+**https://customersegmentationusingrfm-pyfhxyvkrcuiggshixtzec.streamlit.app/**
